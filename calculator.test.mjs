@@ -1,0 +1,8 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{calculate,extraBase,rates}from'./calculator.mjs';const base={amount:100000,rate:20,tax:24,year:2026,half:true};
+test('100k: beneficio e primo/ultimo esercizio',()=>{const r=calculate(base);assert.equal(r.saving,43200);assert.equal(r.total,67200);assert.equal(r.net,32800);assert.equal(r.rows.length,6);assert.equal(r.rows[0].benefit,4320);assert.equal(r.rows.at(-1).benefit,4320)});
+test('scaglioni progressivi e tetto',()=>{assert.equal(extraBase(2500000),4500000);assert.equal(extraBase(3000000),5000000);assert.equal(extraBase(10000000),12000000);assert.equal(extraBase(20000000),17000000);assert.equal(extraBase(25000000),17000000)});
+test('tutte le aliquote e piani riconciliano anche i centesimi',()=>{for(const rate of rates)for(const half of[true,false]){const r=calculate({...base,amount:123456.78,rate,half});for(const[key,total]of[['quota',123456.78],['deduction',r.extra],['benefit',r.saving],['ordinary',r.ordinarySaving]])assert.ok(Math.abs(r.rows.reduce((s,x)=>s+x[key],0)-total)<.001);assert.equal(r.rows.at(-1).cumulative,r.saving)}});
+test('20% pieno: cinque anni, 40% ridotto: tre',()=>{assert.equal(calculate({...base,half:false}).rows.length,5);assert.equal(calculate({...base,rate:40}).rows.length,3)});
+test('input non validi e fiscalita zero',()=>{for(const amount of[0,-1,NaN,Infinity])assert.throws(()=>calculate({...base,amount}));assert.throws(()=>calculate({...base,tax:101}));assert.equal(calculate({...base,tax:0}).saving,0)});
+
+test('un centesimo termina e riconcilia',()=>{const r=calculate({...base,amount:.01,rate:12.5});assert.ok(r.rows.length<=9);assert.equal(r.rows.at(-1).cumulative,r.saving);assert.equal(r.rows.reduce((s,x)=>s+x.quota,0),.01)});

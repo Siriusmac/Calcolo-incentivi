@@ -1,0 +1,3 @@
+import http from 'node:http';import{readFile}from'node:fs/promises';import{fileURLToPath}from'node:url';
+const files={'/':'index.html','/index.html':'index.html','/style.css':'style.css','/app.mjs':'app.mjs','/calculator.mjs':'calculator.mjs'};
+http.createServer(async(req,res)=>{const file=files[new URL(req.url,'http://localhost').pathname];if(!file){res.writeHead(404);res.end();return}try{res.setHeader('Content-Type',file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.css')?'text/css':'text/javascript');res.end(await readFile(fileURLToPath(new URL(file,import.meta.url))))}catch{res.writeHead(500);res.end()}}).listen(4174,'0.0.0.0',()=>console.log('Incentiva disponibile sulla porta 4174'));
