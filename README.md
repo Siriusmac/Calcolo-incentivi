@@ -38,4 +38,4 @@ Concept in design/concept.png. Pubblicazione tramite GitHub Actions: ogni push s
 
 ## Icona e schermata Home
 
-Icona generata con Image Gen integrato: calcolatrice chiara con simbolo percentuale su fondo verde, coerente con l’app. Master 1024 px e PNG 32, 180, 192 e 512 px in `icons/`. Favicon e Apple Touch Icon sono collegate nella pagina; `site.webmanifest` usa percorsi relativi compatibili con GitHub Pages. Il manifest non introduce supporto offline. La verifica su iPhone reale rimane da effettuare.
+Icona generata con Image Gen integrato: calcolatrice chiara con scritta 5.0 su fondo verde, coerente con l’app. Master 1024 px e PNG 32, 180, 192 e 512 px in `icons/`. Favicon e Apple Touch Icon sono collegate nella pagina; `site.webmanifest` usa percorsi relativi compatibili con GitHub Pages. Il manifest non introduce supporto offline. La verifica su iPhone reale rimane da effettuare.
