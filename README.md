@@ -1,11 +1,11 @@
-# Incentiva
+# Calcolo incentivi
 
 Web app responsive in italiano per simulare il recupero fiscale di un investimento. Il primo incentivo implementato è l’iperammortamento 2026 per acquisti di beni materiali. Nessuna dipendenza, account, database o trasmissione dei dati inseriti.
 
 ## Online
 
-- App: https://Siriusmac.github.io/Incentiva/
-- Repository: https://github.com/Siriusmac/Incentiva
+- App: https://Siriusmac.github.io/Calcolo-incentivi/
+- Repository: https://github.com/Siriusmac/Calcolo-incentivi
 
 ## Avvio
 

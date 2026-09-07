@@ -1,4 +1,4 @@
-# Handoff — Incentiva
+# Handoff — Calcolo incentivi
 
 ## Prodotto
 
@@ -6,8 +6,8 @@ Simulatore italiano di recupero fiscale per investimenti. La prima misura implem
 
 ## Repository e pubblicazione
 
-- Repository: https://github.com/Siriusmac/Incentiva
-- Sito: https://Siriusmac.github.io/Incentiva/
+- Repository: https://github.com/Siriusmac/Calcolo-incentivi
+- Sito: https://Siriusmac.github.io/Calcolo-incentivi/
 - Branch: main.
 - GitHub Pages usa GitHub Actions, workflow `.github/workflows/pages.yml`.
 - Ogni push su main passa i test, esegue `npm run build` e pubblica `dist/`.
