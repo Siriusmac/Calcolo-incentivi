@@ -34,4 +34,8 @@ Motore separato in calculator.mjs per consentire l’aggiunta successiva di altr
 
 Sei test automatici coprono esempio 100.000 euro, scaglioni e massimale, tutte le aliquote e i due piani, riconciliazione ai centesimi, input non validi, fiscalità zero e importi minimi. Verifica browser desktop/mobile e stampa/CSV interattivi ancora da completare: il browser integrato ha negato accesso per indisponibilità della verifica della policy amministrativa. Nessuna verifica visiva finale viene dichiarata.
 
-Concept in design/concept.png. Pubblicazione tramite GitHub Actions: ogni push su `main` esegue test e build, poi distribuisce esclusivamente i quattro file della web app da `dist/`. README, test e concept restano nella repository e non nell’artefatto del sito. Vedi HANDOFF.md per stato e limiti.
+Concept in design/concept.png. Pubblicazione tramite GitHub Actions: ogni push su `main` esegue test e build, poi distribuisce esclusivamente i file della web app, il manifest e le icone da `dist/`. README, test e concept restano nella repository e non nell’artefatto del sito. Vedi HANDOFF.md per stato e limiti.
+
+## Icona e schermata Home
+
+Icona generata con Image Gen integrato: calcolatrice chiara con simbolo percentuale su fondo verde, coerente con l’app. Master 1024 px e PNG 32, 180, 192 e 512 px in `icons/`. Favicon e Apple Touch Icon sono collegate nella pagina; `site.webmanifest` usa percorsi relativi compatibili con GitHub Pages. Il manifest non introduce supporto offline. La verifica su iPhone reale rimane da effettuare.

@@ -21,7 +21,7 @@ Simulatore italiano di recupero fiscale per investimenti. La prima misura implem
 - `app.mjs`: aggiornamento DOM, grafico SVG, CSV e stampa.
 - `index.html`, `style.css`: interfaccia e responsive a 760px.
 - `server.mjs`: server locale sulla porta 4174, raggiungibile anche in LAN.
-- `build.mjs`: selezione esplicita dei soli file pubblicabili.
+- `build.mjs`: selezione esplicita dei soli file pubblicabili, incluse icone e manifest.
 - `design/`: concept e note di progettazione, non serviti dal sito.
 
 ## Validazione e limiti
@@ -37,3 +37,7 @@ La simulazione non certifica ammissibilità o capienza fiscale. Assume un solo i
 1. Verificare su browser reale desktop e smartphone: input, overflow tabella, CSV e stampa.
 2. Validare il modello fiscale con il professionista che segue i casi d’uso effettivi.
 3. Per altri bandi, introdurre regole indipendenti con test dedicati e regole di cumulo esplicite; nessun altro incentivo è già implementato.
+
+## Icona e schermata Home
+
+Icona generata con Image Gen integrato: calcolatrice chiara con simbolo percentuale su fondo verde, coerente con l’app. Master 1024 px e PNG 32, 180, 192 e 512 px in `icons/`. Favicon e Apple Touch Icon sono collegate nella pagina; `site.webmanifest` usa percorsi relativi compatibili con GitHub Pages. Il manifest non introduce supporto offline. La verifica su iPhone reale rimane da effettuare.
